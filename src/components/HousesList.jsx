@@ -3,10 +3,14 @@ import { House } from './House';
 import { housesAPI } from '../rest/HousesAPI.jsx';
 
 export class HousesList extends React.Component {
-    state = {
-        houses : []
-    };
-
+    constructor() {
+        super()
+        this.state = {
+            houses : []
+        };
+        console.log(this.state.houses)
+    }
+    
     componentDidMount() {
         this.fetchHouses();
     };
@@ -20,18 +24,18 @@ export class HousesList extends React.Component {
         await housesAPI.put(updatedHouse);
         this.fetchHouses();
     }
-
+  
     render() {
         return (
             <div className='house-list'>
-                {this.state.houses.map((house) => {
+                {this.state.houses.map((house) =>
                     <House
                         house = {house}
                         key = {house._id}
                         updateHouse = {this.updateHouse}
                     />
-                    })
-                };
+                    )
+                }
             </div>
         )
     }

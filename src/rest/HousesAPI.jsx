@@ -1,4 +1,4 @@
-const baseURL = 'https://64b7578edf0839c97e1684e0.mockapi.io/api/houses/';
+const baseURL = 'https://64b7578edf0839c97e1684e0.mockapi.io/api/houses/houses';
 
 class HousesApi {
     get = async () => {
